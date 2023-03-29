@@ -50,15 +50,15 @@ describe Song do
       it 'has a class variable, @@count' do 
         expect(Song.class_variable_get(:@@count)).to eq(3)
       end
+      
+          it "has a class variable, @@genres, that contains all of the genres of existing songs" do 
+            expect(Song.class_variable_get(:@@genres)).to match(["rap", "rap", "pop"])
+          end
+        end
   
       it "has a class variable, @@artists, that contains all of the artists of existing songs" do 
         expect(Song.class_variable_get(:@@artists)).to match(["Jay-Z", "Jay-Z", "Brittany Spears"])
       end
-  
-      it "has a class variable, @@genres, that contains all of the genres of existing songs" do 
-        expect(Song.class_variable_get(:@@genres)).to match(["rap", "rap", "pop"])
-      end
-    end
   
     describe ".count" do 
       it "is a class method that returns that number of songs created" do
